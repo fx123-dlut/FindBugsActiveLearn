@@ -1,9 +1,9 @@
 package edu.lu.uni.serval.alarm.util.db.graph.neo4j
 
 object VioDBFacade {
-  var viodbURI = "bolt://empise.uni.lux:7687"
-  var user = "task"
-  var passwd = "ssel1008"
+  var viodbURI = "bolt://172.29.4.23:7687"
+  var user = "neo4j"
+  var passwd = "ise@1901"
   var driver: Driver = _
   var session: Session = _
 

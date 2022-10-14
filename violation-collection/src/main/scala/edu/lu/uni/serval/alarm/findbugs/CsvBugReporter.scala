@@ -102,7 +102,6 @@ class CsvBugReporter(outputPath: String) extends TextUIBugReporter
     val aMethod = bugInstance.getPrimaryMethod
     val aSourceLine = bugInstance.getPrimarySourceLineAnnotation
     val aRank = bugInstance.getBugRank
-    val aBugRankCategory = bugRow.getBugRankCategory
 
     val sClass = aClass match
     {
