@@ -342,12 +342,12 @@ object AlarmMatcher extends LazyLogging
   	val untrackedChildAlarms = (childAlarms -- childTracked)
   	
   	untrackedChildAlarms.foreach( e => {
-  			val key = "%s:%s:%s:%s:%d:%d".format(project, e.baseCommit.commitHash, 
-  			e.className, e.vType, e.startLine, e.endLine)
+  			val key = "%s:%s:%s:%s:%d:%d:%d".format(project, e.baseCommit.commitHash,
+  			e.className, e.vType, e.startLine, e.endLine, e.rank)
   	
 		  	//VioDBFacade.init()
 				VioDBFacade.addNewOriginViolation(key, project, 
-						e.baseCommit.commitHash, e.vType, e.category, e.startLine, e.endLine)
+						e.baseCommit.commitHash, e.vType, e.category, e.startLine, e.endLine, e.rank)
 				//VioDBFacade.close()
   		})
   	

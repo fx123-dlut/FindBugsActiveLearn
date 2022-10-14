@@ -56,12 +56,12 @@ class AlarmTracker(projectName: String) extends LazyLogging   {
   
   def createAlarmOrigin(e: AlarmEntity)
   {
-  	val key = "%s:%s:%s:%s:%d:%d".format(projectName, e.baseCommit.commitHash, 
-  			e.className, e.vType, e.startLine, e.endLine)
+  	val key = "%s:%s:%s:%s:%d:%d:%d".format(projectName, e.baseCommit.commitHash,
+  			e.className, e.vType, e.startLine, e.endLine, e.rank)
   	
   	//VioDBFacade.init()
 		VioDBFacade.addNewOriginViolation(key, projectName, 
-				e.baseCommit.commitHash, e.vType, e.category, e.startLine, e.endLine)
+				e.baseCommit.commitHash, e.vType, e.category, e.startLine, e.endLine, e.rank)
 		//VioDBFacade.close()
   }
 

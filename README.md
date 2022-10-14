@@ -14,7 +14,7 @@ Parser/src/main/java/edu/lu/uni/serval/main/Main.java
 
 Mining patterns for violations and fixing violations with PatternMining.
 ```
-PatternMining/src/main/java/edu/lu/uni/serval/mining/fix/pattern/PatternMiner.java
+PatternMining/src/main/edu.lu.uni.serval.alarm.findbugs.exp.AlarmExpExecutorn/java/edu/lu/uni/serval/mining/fix/pattern/PatternMiner.java
 PatternMining/src/main/java/edu/lu/uni/serval/mining/pattern/fixedViolation/PatternMiner.java
 PatternMining/src/main/java/edu/lu/uni/serval/mining/pattern/unfixedViolation/PatternMiner.java
 PatternMining/src/main/java/edu/lu/uni/serval/mining/pattern/violation/PatternMiner.java
