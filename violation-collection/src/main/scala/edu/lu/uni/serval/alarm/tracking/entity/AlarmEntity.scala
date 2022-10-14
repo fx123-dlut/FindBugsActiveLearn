@@ -12,7 +12,7 @@ class AlarmEntity(
 									aMethod: String, // method
 									sLine: String, // start line
 									eLine: String, // end line
-								  rank : Int
+								  rank : Int,
 									commit: AlarmsInCommit // where this belongs to
 									) extends LazyLogging								
 {
