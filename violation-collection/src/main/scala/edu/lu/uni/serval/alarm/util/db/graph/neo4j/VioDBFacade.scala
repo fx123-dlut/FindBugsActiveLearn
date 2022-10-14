@@ -1,5 +1,13 @@
 package edu.lu.uni.serval.alarm.util.db.graph.neo4j
 
+import org.neo4j.driver.v1._
+import org.neo4j.driver.v1.Values._
+import scala.collection.mutable._
+import scala.collection.JavaConverters._
+import com.google.gson.Gson
+import com.google.gson.JsonObject
+
+
 object VioDBFacade {
   var viodbURI = "bolt://172.29.4.23:7687"
   var user = "neo4j"

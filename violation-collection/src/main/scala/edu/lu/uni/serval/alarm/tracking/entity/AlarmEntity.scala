@@ -12,7 +12,7 @@ class AlarmEntity(
 									aMethod: String, // method
 									sLine: String, // start line
 									eLine: String, // end line
-								  erank : Int,
+								  erank : String,
 									commit: AlarmsInCommit // where this belongs to
 									) extends LazyLogging								
 {
@@ -35,7 +35,7 @@ class AlarmEntity(
 	val startLine = sLine.toInt
 	val endLine = eLine.toInt
 	val baseCommit = commit
-  val rank = erank
+  val rank = erank.toInt
 	// End of basic constructor
 	///////////////////////////////////////
 	
