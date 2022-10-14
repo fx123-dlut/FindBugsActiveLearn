@@ -54,6 +54,7 @@ class AlarmsInCommit(h: String, rawList: List[List[String]]) extends LazyLogging
 				x(5), // method
 				x(6), // start line
 				x(7),  // end line
+				x(8),
 				this
 		);
 	}

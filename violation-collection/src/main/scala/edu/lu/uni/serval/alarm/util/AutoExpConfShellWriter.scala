@@ -25,8 +25,8 @@ object AutoExpConfShellWriter
   	val workingDirPath = workingDir.getCanonicalPath
   	
   	val tmpDir = "/tmp/dkim"
-  	val javaRT = "/home/users/dkim/sbin/java/bin/java"
-  	val libDir = "/scratch/users/dkim/exp/violation/lib"
+  	val javaRT = "/root/Java/jdk1.8.0_311/bin/java"
+  	val libDir = "/data/tmp"
   	
   	
   	val confDir = new File(workingDir + "/conf")
