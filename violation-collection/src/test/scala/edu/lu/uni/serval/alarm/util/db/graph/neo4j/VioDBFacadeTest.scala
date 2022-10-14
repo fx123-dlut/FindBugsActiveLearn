@@ -21,7 +21,7 @@ class VioDBFacadeTest
 		VioDBFacade.init()
 		//id: String, pid: String, commit: String, sLine: Int, eLine: Int
 		VioDBFacade.connect2Parent(
-				"new:commons-math:type", "child:commons-math:child", "hash", "b142341324324", 213, 214)
+				"new:commons-math:type", "child:commons-math:child", "hash", "b142341324324", 213, 214,4)
 		VioDBFacade.close()
 	}
 	
