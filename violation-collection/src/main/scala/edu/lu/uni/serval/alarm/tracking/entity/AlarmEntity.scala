@@ -46,7 +46,8 @@ class AlarmEntity(
 		sb ++= priorityToString + ";"
 		sb ++= category + ";   "
 		sb ++= vType + "@" + className + ";" + fieldName + "#" + methodName + ":"
-		sb ++= s"$startLine-$endLine"
+		sb ++= s"$startLine-$endLine" + ":"
+		sb ++= rank
 		sb.toString() 
 	}
 	
