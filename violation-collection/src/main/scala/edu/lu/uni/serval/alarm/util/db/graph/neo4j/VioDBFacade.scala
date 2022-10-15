@@ -72,7 +72,7 @@ object VioDBFacade {
 												 a.vtype = {vtype}, 
 												 a.category = {category}, 
 												 a.sLine = {sLine}, 
-												 a.eLine = {eLine}
+												 a.eLine = {eLine},
                          a.rank = {rank}
 						RETURN a""",
       value(
