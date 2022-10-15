@@ -61,7 +61,7 @@ object VioDBFacade {
   }
 
   def addNewOriginViolation(id: String, project: String, commit: String,
-                            vtype: String, category: String, sLine: Int, eLine: Int, rank: Int, priority: String
+                            vtype: String, category: String, sLine: Int, eLine: Int, rank: Int, priority: Int
                            ) = {
     val result = session.run(
       """MERGE (a:Violation {id: {id}})
@@ -105,7 +105,7 @@ object VioDBFacade {
     }
   }
 
-  def connect2Parent(pid: String, id: String, commit: String, matched: String, sLine: Int, eLine: Int, rank: Int, priority: String) = {
+  def connect2Parent(pid: String, id: String, commit: String, matched: String, sLine: Int, eLine: Int, rank: Int, priority: Int) = {
     val result = session.run(
       """MATCH (p:Violation { id: {pid} } )
 															MERGE (c:Violation { id: {id} } )
