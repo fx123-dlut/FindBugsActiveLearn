@@ -61,7 +61,7 @@ object VioDBFacade {
   }
 
   def addNewOriginViolation(id: String, project: String, commit: String,
-                            vtype: String, category: String, sLine: Int, eLine: Int, rank: Int
+                            vtype: String, category: String, sLine: Int, eLine: Int, rank: Int, priority: String
                            ) = {
     val result = session.run(
       """MERGE (a:Violation {id: {id}})
@@ -73,7 +73,8 @@ object VioDBFacade {
 												 a.category = {category}, 
 												 a.sLine = {sLine}, 
 												 a.eLine = {eLine},
-                         a.rank = {rank}
+                         a.rank = {rank},
+                         a.priority = {priority}
 						RETURN a""",
       value(
         Map("id" -> id,
@@ -84,7 +85,8 @@ object VioDBFacade {
           "category" -> category,
           "sLine" -> sLine,
           "eLine" -> eLine,
-          "rank" -> rank
+          "rank" -> rank,
+          "priority" -> priority
         ).asJava
       )
     )
@@ -103,7 +105,7 @@ object VioDBFacade {
     }
   }
 
-  def connect2Parent(pid: String, id: String, commit: String, matched: String, sLine: Int, eLine: Int, rank: Int) = {
+  def connect2Parent(pid: String, id: String, commit: String, matched: String, sLine: Int, eLine: Int, rank: Int, priority: String) = {
     val result = session.run(
       """MATCH (p:Violation { id: {pid} } )
 															MERGE (c:Violation { id: {id} } )
@@ -117,7 +119,8 @@ object VioDBFacade {
 																		 c.class = {class}, 
 																		 c.sLine = {sLine}, 
 																		 c.eLine = {eLine},
-                                     c.rank = {rank}
+                                     c.rank = {rank},
+                                     c.priority = {priority}
 										MERGE (p)-[:CHILD]->(c)
   									MERGE (c)-[:PARENT]->(p)
 										RETURN p, c
@@ -130,7 +133,8 @@ object VioDBFacade {
           "matched" -> matched,
           "sLine" -> sLine,
           "eLine" -> eLine,
-          "rank" -> rank
+          "rank" -> rank,
+          "priority" -> priority
         ).asJava
       )
     )

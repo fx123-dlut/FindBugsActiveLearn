@@ -89,16 +89,17 @@ object AlarmMatcher extends LazyLogging {
         trackingMap += (pa -> matchedChild) // finally matched in unchanged files.
 
         // record into Neo4J
-        val parentKey = "%s:%s:%s:%s:%d:%d:%d".format(project, parent.commitHash, pa.className,
+        val parentKey = "%s:%s:%s:%s:%s:%d:%d:%d".format(parent.priority, project, parent.commitHash, pa.className,
           pa.vType, pa.startLine, pa.endLine, pa.rank)
-        val childKey = "%s:%s:%s:%s:%d:%d".format(project, child.commitHash, matchedChild.className,
+        val childKey = "%s:%s:%s:%s:%s:%d:%d".format(matchedChild.priority, project, child.commitHash, matchedChild.className,
           matchedChild.vType, matchedChild.startLine, matchedChild.endLine, matchedChild.rank)
 
         //VioDBFacade.init()
         //id: String, pid: String, commit: String, sLine: Int, eLine: Int
         VioDBFacade.connect2Parent(
           parentKey, childKey, child.commitHash, matchedby,
-          matchedChild.startLine, matchedChild.endLine, matchedChild.rank)
+          matchedChild.startLine, matchedChild.endLine, matchedChild.rank,
+          matchedChild.priority)
         //VioDBFacade.close()
 
         true
@@ -321,7 +322,7 @@ object AlarmMatcher extends LazyLogging {
 
       //VioDBFacade.init()
       VioDBFacade.addNewOriginViolation(key, project,
-        e.baseCommit.commitHash, e.vType, e.category, e.startLine, e.endLine, e.rank)
+        e.baseCommit.commitHash, e.vType, e.category, e.startLine, e.endLine, e.rank, e.priority)
       //VioDBFacade.close()
     })
 
