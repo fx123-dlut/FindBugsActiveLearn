@@ -91,7 +91,7 @@ object AlarmMatcher extends LazyLogging {
         // record into Neo4J
         val parentKey = "%d:%s:%s:%s:%s:%d:%d:%d".format(pa.priority, project, parent.commitHash, pa.className,
           pa.vType, pa.startLine, pa.endLine, pa.rank)
-        val childKey = "%d:%s:%s:%s:%s:%d:%d".format(matchedChild.priority, project, child.commitHash, matchedChild.className,
+        val childKey = "%d:%s:%s:%s:%s:%d:%d:%d".format(matchedChild.priority, project, child.commitHash, matchedChild.className,
           matchedChild.vType, matchedChild.startLine, matchedChild.endLine, matchedChild.rank)
 
         //VioDBFacade.init()
