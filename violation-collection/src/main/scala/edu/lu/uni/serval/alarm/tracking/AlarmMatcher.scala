@@ -89,10 +89,10 @@ object AlarmMatcher extends LazyLogging {
         trackingMap += (pa -> matchedChild) // finally matched in unchanged files.
 
         // record into Neo4J
-        val parentKey = "%s:%s:%s:%s:%d:%d:%d".format(project, parent.commitHash, pa.className,
-          pa.vType, pa.startLine, pa.endLine, pa.rank)
-        val childKey = "%s:%s:%s:%s:%d:%d:%d".format(project, child.commitHash, matchedChild.className,
-          matchedChild.vType, matchedChild.startLine, matchedChild.endLine, matchedChild.rank)
+        val parentKey = "%s:%s:%s:%s:%s:%d:%d".format(parent.priority, project, parent.commitHash, pa.className,
+          pa.vType, pa.startLine, pa.endLine)
+        val childKey = "%s:%s:%s:%s:%s:%d:%d".format(matchedChild.priority, project, child.commitHash, matchedChild.className,
+          matchedChild.vType, matchedChild.startLine, matchedChild.endLine)
 
         //VioDBFacade.init()
         //id: String, pid: String, commit: String, sLine: Int, eLine: Int
@@ -317,8 +317,8 @@ object AlarmMatcher extends LazyLogging {
     val untrackedChildAlarms = (childAlarms -- childTracked)
 
     untrackedChildAlarms.foreach(e => {
-      val key = "%s:%s:%s:%s:%d:%d:%d".format(project, e.baseCommit.commitHash,
-        e.className, e.vType, e.startLine, e.endLine, e.rank)
+      val key = "%s:%s:%s:%s:%d:%d".format(project, e.baseCommit.commitHash,
+        e.className, e.vType, e.startLine, e.endLine)
 
       //VioDBFacade.init()
       VioDBFacade.addNewOriginViolation(key, project,
