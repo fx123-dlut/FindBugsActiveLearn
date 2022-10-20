@@ -6,3 +6,6 @@ target/
 .cache-main
 .cache-tests
 tmp/
+AlarmExpExecutor.scala
+VioDBFacade.scala
+AutoExpConfShellWriter.scala

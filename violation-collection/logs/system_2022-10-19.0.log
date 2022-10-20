@@ -1,0 +1,4 @@
+11:54:31.566 [main] ERROR e.l.u.s.a.t.TrackingExecutorByProject$:11 - Unknown Error
+java.lang.ArrayIndexOutOfBoundsException: 0
+	at edu.lu.uni.serval.alarm.tracking.TrackingExecutorByProject$.main(TrackingExecutorByProject.scala:12) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.TrackingExecutorByProject.main(TrackingExecutorByProject.scala) [classes/:na]

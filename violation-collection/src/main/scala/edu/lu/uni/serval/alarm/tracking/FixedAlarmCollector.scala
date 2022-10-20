@@ -14,12 +14,17 @@ object FixedAlarmCollector extends LazyLogging
 {
 	def main(args: Array[String]): Unit =
 	{
-		collectFixedAlarms("fixed-alarms.list", 
-				"/mnt/archive1/data/violations/repos/repos-%s/%s/.git",
-				"/home/darkrsw/repo/false-alarm-study/prj-pack.map",
-				"vtype-stat.csv",
-				"summary-project-vtype.csv"
-				)
+//		collectFixedAlarms("fixed-alarms.list",
+//				"/mnt/archive1/data/violations/repos/repos-%s/%s/.git",
+//				"/home/darkrsw/repo/false-alarm-study/prj-pack.map",
+//				"vtype-stat.csv",
+//				"summary-project-vtype.csv"
+//				)
+		collectFixedAlarmsByProject("maven-dependency-plugin-fixed-alarms.csv",
+			"/root/lxyeah/exp/violation/repos/repos-a/maven-dependency-plugin/.git",
+			"maven-dependency-plugin",
+			"maven-dependency-plugin-vtype-stat.csv",
+			"maven-dependency-plugin-summary-project-vtype.csv")
 				
 	  /*attachFixerCommit(
 	      "/mnt/archive1/data/violations/repos/repos-%s/%s/.git",
@@ -27,7 +32,134 @@ object FixedAlarmCollector extends LazyLogging
 	      "/home/darkrsw/repo/false-alarm-study/prj-pack.map"
       )*/
 	}
-	
+
+	def collectFixedAlarmsByProject(outputPath: String, repoPath: String, project: String, vtypePath: String, summaryPath: String) = {
+		// result output file
+		val outputFile = new File(outputPath)
+
+		// summary file
+		val summaryFile = new File(summaryPath)
+		val summaryMap = Map[String, Counter[String,Int]]()
+
+		// vtype stat file
+		val vtypeStatFile = new File(vtypePath)
+
+
+		// project to Violations map
+		val prjNodeMap = Map[String, Set[Value]]() // prj -> Value
+
+		// prepare project to pack map
+//		val prj2PackMap = TrackingHelperUtils.readProject2PackMap(mapFilePath)
+//		println("prj2pack map size: " + prj2PackMap.size)
+
+		// for vtype stat
+		val vtypeMap = Map[String, Set[Value]]() // vtype -> Value
+
+
+		VioDBFacade.init()
+		////////////////////////////////////////
+
+		// get fixed alarms
+		val fixedList = VioDBFacade.searchFixedAlarmsByProject(project)
+		println("#fixed alarms: " + fixedList.size)
+
+		// sort fixed alarms.
+		val fixedAlarmSet = Set[Value]()
+		fixedList.foreach(x=>{
+			val node = x.get("f")
+			fixedAlarmSet.add(node)
+		})
+
+		val tracker = new AlarmTracker(project)
+		tracker.initGitRepo(repoPath)
+		val gitproxy = tracker.repoProxy.get
+
+		println(s"#alarms in $project: "+fixedAlarmSet.size)
+
+		fixedAlarmSet.foreach( alarmNode => {
+			val prj = alarmNode.get("project").asString()
+			val buggycommit = alarmNode.get("commit").asString()
+			val category = alarmNode.get("category").asString()
+			val vtype = alarmNode.get("vtype").asString()
+			val oid = alarmNode.get("oid").asString().split(":")(1)
+			val fixer = alarmNode.get("fixer").asString()
+			val priority = alarmNode.get("priority").asInt()
+			val rank = alarmNode.get("rank").asInt()
+			val sLine = alarmNode.get("sLine").asInt()
+			val eLine = alarmNode.get("eLine").asInt()
+
+			addVtypeValue2Set(vtypeMap, vtype, alarmNode)
+
+			val infoTokens = alarmNode.get("id").asString().split(":")
+			val buggyPackagePath = infoTokens(2)
+
+			//val gitproxy = this.repoProxy.get
+			val parentCommit = gitproxy.getCommitByHash(buggycommit)
+			val childCommit = gitproxy.getCommitByHash(fixer)
+
+			// find changed set
+			val diffs = gitproxy.getChangedFiles(childCommit, parentCommit).toList
+			val sourceChanges = TrackingUtils.getChangedSourceFiles(diffs)
+			val (parentChangedPaths, childChangedPaths, diffMap) =
+				AlarmMatcher.transformFilesToPackagePaths(sourceChanges, parentCommit, childCommit, gitproxy)
+
+			// 0. find out whether it is in changed set.
+			val mainBuggyClassPath = if(buggyPackagePath.contains("$"))
+			{
+				val tokens2 = buggyPackagePath.split("\\$")
+				tokens2(0)
+			}
+			else buggyPackagePath
+
+			println(s"package name: $mainBuggyClassPath")
+
+			if( ! parentChangedPaths.contains(mainBuggyClassPath) )
+			{
+				// something wrong
+				println()
+				logger.error(s"Something went wrong: ${alarmNode.get("id")}==>$fixer")
+			}
+			else
+			{
+				val d = diffMap(mainBuggyClassPath)
+				val resultString = s"$category,$vtype,$priority,$rank,$prj,$oid,$buggycommit,${d.getOldPath},$sLine,$eLine,$fixer,${d.getNewPath}\n"
+				FileUtils.write(outputFile, resultString, "UTF-8", true)
+
+				// add to summary
+				add2summaryMap(summaryMap, prj, vtype)
+
+				print(".")
+			}
+		})
+
+		println()
+
+
+
+//		println("#projects: "+prjNodeMap.size)
+
+		// print vtype stat
+		//vtypeMap.foreach( n => println(s"${n._1}=>${n._2.size}") )
+		vtypeMap.foreach( n =>
+			FileUtils.write(vtypeStatFile, s"${n._1}=>${n._2.size}\n", "UTF-8", true ) )
+
+		summaryMap.foreach( prjPair =>
+		{
+			val prj = prjPair._1
+			val counter = prjPair._2.toMap()
+
+			counter.foreach( counterPair => {
+				val vtype = counterPair._1
+				val count = counterPair._2
+				FileUtils.write(summaryFile, s"$prj,$vtype,$count\n", "UTF-8", true)
+			})
+		})
+
+
+		////////////////////////////////////////
+		VioDBFacade.close()
+	}
+
 	def collectFixedAlarms(outputPath: String, 
 	    repoPathTemplate: String, mapFilePath: String,
 	    vtypePath: String,
