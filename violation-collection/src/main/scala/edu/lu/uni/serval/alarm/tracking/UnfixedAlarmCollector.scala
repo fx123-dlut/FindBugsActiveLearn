@@ -17,10 +17,138 @@ object UnfixedAlarmCollector
 {
   def main(args: Array[String]): Unit =
   {
-    doTask("fixed-summary-project-vtype.csv", args(0))
+    doTask("/root/lxyeah/exp/violation/repos/repos-a/maven-dependency-plugin/.git", "maven-dependency-plugin")
   }
+
+	def doTask(repoPath: String, project: String): Unit = {
+		val outFile = new File(s"unfixed-$project.csv")
+		val tracker = new AlarmTracker(project)
+		tracker.initGitRepo(repoPath)
+		val gitproxy = tracker.repoProxy.get
+
+		VioDBFacade.init()
+
+		val results = VioDBFacade.session.run(
+			s"""match (n:Violation {project: '$project'})
+						where NOT (n)-[:CHILD]->(:Violation)
+						return n""")
+		/*
+    val results = VioDBFacade.session.run(
+        s"""match (n:Violation {id: 'Activiti-Activiti:a8e456784456f93a5c808d241b156cf79b0985ce:org.activiti.engine.impl.bpmn.behavior.IntermediateThrowCompensationEventActivityBehavior:BC_UNCONFIRMED_CAST:41:41'})
+            return n""")
+    */
+		val dlist = results.list().asScala.toList
+		println("Neo4J query completed: "+dlist.size)
+
+		// reaarange commit and files
+		val commitFileMap = Map[String, Map[String, Set[Value]]]()
+
+		var counter = 0
+		// collect commits and files.
+		dlist.foreach(line => {
+			try {
+				val node = line.get("n")
+				val commitHash = node.get("commit").asString()
+				val resolution = if(node.get("resolution").isNull()) "" else node.get("resolution").asString()
+				val vtype = node.get("vtype").asString()
+				val infoTokens = node.get("id").asString().split(":")
+				val packagePath = infoTokens(2)
+
+				val mainClassPath = if(packagePath.contains("$"))
+				{
+					val tokens2 = packagePath.split("\\$")
+					tokens2(0)
+				}
+				else packagePath
+
+				val fileValueMap = if( commitFileMap.contains(commitHash))
+				{
+					commitFileMap(commitHash)
+				}
+				else
+				{
+					val newMap = Map[String, Set[Value]]()
+					commitFileMap.put(commitHash,newMap)
+					newMap
+				}
+
+				val valueSet = if( fileValueMap.contains(mainClassPath) )
+				{
+					fileValueMap(mainClassPath)
+				}
+				else
+				{
+					val newSet = Set[Value]()
+					fileValueMap.put(mainClassPath, newSet)
+					newSet
+				}
+
+				if( resolution != "fixed")
+				{
+					counter+=1
+					valueSet.add(node)
+				}
+			} catch {
+				case e: Throwable => println("error: "+e.getMessage)
+			}
+		})
+
+		println("#Node after filtering: "+counter)
+
+		commitFileMap.foreach( entry =>
+		{
+			val commitHash = entry._1
+			val fileValueMap = entry._2
+
+			println("Processing "+commitHash)
+
+			val commit = gitproxy.getCommitByHash(commitHash)
+
+			val treeWalk = new TreeWalk( gitproxy.getRepository() )
+			val tree = commit.getTree()
+			treeWalk.addTree(tree);
+			treeWalk.setRecursive(true);
+
+			while( treeWalk.next() ) {
+				val path = treeWalk.getPathString()
+				//println(path)
+				if( path.toLowerCase().endsWith(".java") )
+				{
+					val source = getSourceText( commit, path, gitproxy )
+					val thisPackagePath = parseAndExtractPackagePath( source )
+					val className = takeFileName(path)
+					val targetPath = thisPackagePath+"."+className
+
+					if(fileValueMap.contains(targetPath))
+					{
+						val valueSet = fileValueMap(targetPath)
+
+						valueSet.foreach( node => {
+							val category = node.get("category").asString()
+							val vtype = node.get("vtype").asString()
+							val priority = node.get("priority").asInt()
+							val rank = node.get("rank").asInt()
+							val oid = node.get("oid").asString().split(":")(1)
+							val commitHash = node.get("commit").asString()
+							val sLine = node.get("sLine").asInt()
+							val eLine = node.get("eLine").asInt()
+							val resolution = if(node.get("resolution").isNull()) "" else node.get("resolution").asString()
+
+							FileUtils.write(outFile, s"$category,$vtype,$priority,$rank,$project,$oid,$commitHash,$path,$sLine,$eLine\n", "UTF-8", true)
+						})
+					}
+				}
+			}
+
+			treeWalk.close();
+		})
+
+		println("Original Neo4J query completed: "+dlist.size)
+		println("#Node after filtering: "+counter)
+		VioDBFacade.close()
+	}
   
-  def doTask(fixSummaryPath: String, project: String): Unit =
+  def doTaskByVtype(fixSummaryPath: String, project: String): Unit =
   {
     val summaryFile = new File(fixSummaryPath)    
   	val summaryList = CSVReader.open(summaryFile).all()
@@ -75,7 +203,6 @@ object UnfixedAlarmCollector
     dlist.foreach(line => {
 		  try { 
 		    val node = line.get("n")
-		    
   		  val commitHash = node.get("commit").asString()
   		  val resolution = if(node.get("resolution").isNull()) "" else node.get("resolution").asString()
         val vtype = node.get("vtype").asString()

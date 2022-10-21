@@ -9,9 +9,9 @@ import com.google.gson.JsonObject
 
 
 object VioDBFacade {
-  var viodbURI = "bolt://172.29.4.23:7687"
+  var viodbURI = "bolt://172.29.4.55:7687"
   var user = "neo4j"
-  var passwd = "ise@1901"
+  var passwd = "112358"
   var driver: Driver = _
   var session: Session = _
 
@@ -59,6 +59,17 @@ object VioDBFacade {
 
     results.list().asScala.toList
   }
+
+  def searchFixedAlarmsByProject(project: String): List[Record] = {
+    val results = session.run(
+      """MATCH (f:Violation {resolution: 'fixed', project: {project}})
+					 WHERE  exists(f.fixer)
+					 RETURN f
+				""", value(Map("project" -> project).asJava))
+
+    results.list().asScala.toList
+  }
+
 
   def addNewOriginViolation(id: String, project: String, commit: String,
                             vtype: String, category: String, sLine: Int, eLine: Int, rank: Int, priority: Int
