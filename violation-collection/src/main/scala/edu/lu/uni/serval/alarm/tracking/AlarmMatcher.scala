@@ -322,7 +322,7 @@ object AlarmMatcher extends LazyLogging {
 
       //VioDBFacade.init()
       VioDBFacade.addNewOriginViolation(key, project,
-        e.baseCommit.commitHash, e.vType, e.category, e.startLine, e.endLine, e.rank, e.priority)
+        e.baseCommit.commitHash, e.vType, e.category, e.startLine, e.endLine, e.rank, e.priority, e.fieldName, e.methodName)
       //VioDBFacade.close()
     })
 
