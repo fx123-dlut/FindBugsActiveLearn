@@ -1,36 +1,212 @@
-09:23:13.267 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, --version],/usr/bin
-09:23:13.281 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return 'git version 2.17.1'
-09:23:13.282 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+04:52:46.969 [main] ERROR e.l.u.s.a.t.TrackingExecutorByProject$:11 - Unknown Error
+java.lang.ArrayIndexOutOfBoundsException: 0
+	at edu.lu.uni.serval.alarm.tracking.TrackingExecutorByProject$.main(TrackingExecutorByProject.scala:12) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.TrackingExecutorByProject.main(TrackingExecutorByProject.scala) [classes/:na]
+04:54:56.413 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, --version],/usr/bin
+04:54:56.425 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return 'git version 2.17.1'
+04:54:56.425 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
 
-09:23:13.282 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, config, --system, --edit],/usr/bin
-09:23:13.302 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return '/etc/gitconfig'
-09:23:13.303 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+04:54:56.426 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, config, --system, --edit],/usr/bin
+04:54:56.431 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return '/etc/gitconfig'
+04:54:56.431 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
 
-09:23:13.375 [main] INFO  edu.lu.uni.serval.scm.git.GitProxy:68 - Repository connected: /root/lxyeah/exp/violation/repos/repos-a/maven-dependency-plugin/.git
-10:44:16.046 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, --version],/usr/bin
-10:44:16.124 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return 'git version 2.17.1'
-10:44:16.125 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+04:54:56.493 [main] INFO  edu.lu.uni.serval.scm.git.GitProxy:68 - Repository connected: /root/lxyeah/exp/violation/repos/repos-a/maven-dependency-plugin/.git
+04:55:20.845 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:59 - Multiple matches! snippet
+04:55:20.846 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:60 - Multiple matches:
+04:55:20.847 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:61 - 	 Parent:LOW_PRIORITY;D;   UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD@org.apache.maven.plugin.dependency.AbstractFromDependenciesMojo;useSubDirectoryPerArtifact#NO_METHOD:68-68:20 in 5d417db78a71b6e090da40d6fb30518cc400c03c
+04:55:20.848 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;D;   UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD@org.apache.maven.plugin.dependency.AbstractDependencyMojo;outputAbsoluteArtifactFilename#NO_METHOD:170-170:20 in a157db6334b34ecd92abce495f0201fef899807b
+04:55:20.849 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;D;   UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD@org.apache.maven.plugin.dependency.AbstractDependencyMojo;silent#NO_METHOD:133-133:20 in a157db6334b34ecd92abce495f0201fef899807b
+04:55:20.849 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;D;   UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD@org.apache.maven.plugin.dependency.AbstractDependencyMojo;project#NO_METHOD:249-249:17 in a157db6334b34ecd92abce495f0201fef899807b
+04:55:20.850 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:79 - Some already matched! snippet
+04:55:20.850 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:80 - Some already matched! 
+LOW_PRIORITY;D;   UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD@org.apache.maven.plugin.dependency.AbstractFromDependenciesMojo;useSubDirectoryPerArtifact#NO_METHOD:68-68:20 is in a changed source: org.apache.maven.plugin.dependency.AbstractFromDependenciesMojo
+04:55:20.965 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:59 - Multiple matches! snippet
+04:55:20.965 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:60 - Multiple matches:
+04:55:20.966 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:61 - 	 Parent:NORMAL_PRIORITY;D;   UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD@org.apache.maven.plugin.dependency.AbstractFromDependenciesMojo;outputDirectory#NO_METHOD:68-68:17 in 5d417db78a71b6e090da40d6fb30518cc400c03c
+04:55:20.966 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;D;   UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD@org.apache.maven.plugin.dependency.AbstractDependencyMojo;outputAbsoluteArtifactFilename#NO_METHOD:170-170:20 in a157db6334b34ecd92abce495f0201fef899807b
+04:55:20.966 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;D;   UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD@org.apache.maven.plugin.dependency.AbstractDependencyMojo;silent#NO_METHOD:133-133:20 in a157db6334b34ecd92abce495f0201fef899807b
+04:55:20.967 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;D;   UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD@org.apache.maven.plugin.dependency.AbstractDependencyMojo;project#NO_METHOD:249-249:17 in a157db6334b34ecd92abce495f0201fef899807b
+04:55:20.967 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:79 - Some already matched! snippet
+04:55:20.967 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:80 - Some already matched! 
+NORMAL_PRIORITY;D;   UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD@org.apache.maven.plugin.dependency.AbstractFromDependenciesMojo;outputDirectory#NO_METHOD:68-68:17 is in a changed source: org.apache.maven.plugin.dependency.AbstractFromDependenciesMojo
+04:55:21.175 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:70 - All candidates are already matched! exact
+04:55:21.176 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:71 - All matched! 
+NORMAL_PRIORITY;D;   UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD@org.apache.maven.plugin.dependency.AbstractDependencyMojo;project#NO_METHOD:249-249:17 is in a changed source: org.apache.maven.plugin.dependency.AbstractDependencyMojo
+04:55:21.287 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:59 - Multiple matches! snippet
+04:55:21.288 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:60 - Multiple matches:
+04:55:21.288 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:61 - 	 Parent:LOW_PRIORITY;D;   UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD@org.apache.maven.plugin.dependency.AbstractFromDependenciesMojo;useSubDirectoryPerType#NO_METHOD:68-68:20 in 5d417db78a71b6e090da40d6fb30518cc400c03c
+04:55:21.289 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;D;   UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD@org.apache.maven.plugin.dependency.AbstractDependencyMojo;outputAbsoluteArtifactFilename#NO_METHOD:170-170:20 in a157db6334b34ecd92abce495f0201fef899807b
+04:55:21.289 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;D;   UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD@org.apache.maven.plugin.dependency.AbstractDependencyMojo;silent#NO_METHOD:133-133:20 in a157db6334b34ecd92abce495f0201fef899807b
+04:55:21.289 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;D;   UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD@org.apache.maven.plugin.dependency.AbstractDependencyMojo;project#NO_METHOD:249-249:17 in a157db6334b34ecd92abce495f0201fef899807b
+04:55:21.290 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:70 - All candidates are already matched! snippet
+04:55:21.290 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:71 - All matched! 
+LOW_PRIORITY;D;   UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD@org.apache.maven.plugin.dependency.AbstractFromDependenciesMojo;useSubDirectoryPerType#NO_METHOD:68-68:20 is in a changed source: org.apache.maven.plugin.dependency.AbstractFromDependenciesMojo
+04:55:21.350 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:70 - All candidates are already matched! exact
+04:55:21.351 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:71 - All matched! 
+LOW_PRIORITY;D;   UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD@org.apache.maven.plugin.dependency.AbstractDependencyMojo;outputAbsoluteArtifactFilename#NO_METHOD:170-170:20 is in a changed source: org.apache.maven.plugin.dependency.AbstractDependencyMojo
+04:55:42.372 [main] INFO  e.l.u.s.alarm.tracking.AlarmTracker:114 - 2a364e4a1ac8d1ab02b5efca42b888731f5e3b41->a5c11602eaaeb98fdeeea37eb5666dee35642814 has already been matched.
+04:57:12.008 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:116 - No match! even though a parent alram LOW_PRIORITY;D;   UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR@org.apache.maven.plugin.dependency.AbstractFromDependenciesMojo;outputDirectory#execute()V:93-93:20 is in unchanged source: org.apache.maven.plugin.dependency.AbstractFromDependenciesMojo
+04:57:50.272 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:116 - No match! even though a parent alram LOW_PRIORITY;D;   UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR@org.apache.maven.plugin.dependency.AbstractDependencyMojo;resolver#getArtifact(Lorg/apache/maven/plugin/dependency/fromConfiguration/ArtifactItem;)Lorg/apache/maven/artifact/Artifact;:243-243:20 is in unchanged source: org.apache.maven.plugin.dependency.AbstractDependencyMojo
+04:57:50.798 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:116 - No match! even though a parent alram LOW_PRIORITY;D;   UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR@org.apache.maven.plugin.dependency.AbstractDependencyMojo;factory#getArtifact(Lorg/apache/maven/plugin/dependency/fromConfiguration/ArtifactItem;)Lorg/apache/maven/artifact/Artifact;:215-215:20 is in unchanged source: org.apache.maven.plugin.dependency.AbstractDependencyMojo
+04:58:32.494 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:116 - No match! even though a parent alram LOW_PRIORITY;B;   UI_INHERITANCE_UNSAFE_GETRESOURCE@org.apache.maven.plugin.dependency.resolvers.HelpMojo;NO_FIELD#build()Lorg/w3c/dom/Document;:67-67:19 is in unchanged source: org.apache.maven.plugin.dependency.resolvers.HelpMojo
+04:58:33.848 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:116 - No match! even though a parent alram NORMAL_PRIORITY;X;   OBL_UNSATISFIED_OBLIGATION@org.apache.maven.plugin.dependency.resolvers.HelpMojo;NO_FIELD#build()Lorg/w3c/dom/Document;:67-67:20 is in unchanged source: org.apache.maven.plugin.dependency.resolvers.HelpMojo
+04:59:52.177 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:59 - Multiple matches! snippet
+04:59:52.178 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:60 - Multiple matches:
+04:59:52.178 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:61 - 	 Parent:NORMAL_PRIORITY;B;   RV_RETURN_VALUE_IGNORED_BAD_PRACTICE@org.apache.maven.plugin.dependency.utils.markers.DefaultFileMarkerHandler;NO_FIELD#setMarker()V:79-79:16 in e3fea5685aaaf853877bed48cbcbb20005938bbe
+04:59:52.179 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;B;   RV_RETURN_VALUE_IGNORED_BAD_PRACTICE@org.apache.maven.plugin.dependency.fromConfiguration.AbstractFromConfigurationMojo;NO_FIELD#getArtifactItems()Ljava/util/ArrayList;:94-94:16 in bf1763345bb15558c20b7a1505b54a86fd88d00f
+04:59:52.179 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;B;   RV_RETURN_VALUE_IGNORED_BAD_PRACTICE@org.apache.maven.plugin.dependency.utils.markers.DefaultFileMarkerHandler;NO_FIELD#setMarker()V:94-94:16 in bf1763345bb15558c20b7a1505b54a86fd88d00f
+04:59:52.972 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:70 - All candidates are already matched! exact
+04:59:52.973 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:71 - All matched! 
+NORMAL_PRIORITY;B;   RV_RETURN_VALUE_IGNORED_BAD_PRACTICE@org.apache.maven.plugin.dependency.fromConfiguration.AbstractFromConfigurationMojo;NO_FIELD#getArtifactItems()Ljava/util/ArrayList;:94-94:16 is in a changed source: org.apache.maven.plugin.dependency.fromConfiguration.AbstractFromConfigurationMojo
+05:00:08.944 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:116 - No match! even though a parent alram LOW_PRIORITY;D;   UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR@org.apache.maven.plugin.dependency.AbstractDependencyMojo;resolver#getArtifact(Lorg/apache/maven/plugin/dependency/fromConfiguration/ArtifactItem;)Lorg/apache/maven/artifact/Artifact;:241-241:20 is in unchanged source: org.apache.maven.plugin.dependency.AbstractDependencyMojo
+05:00:10.439 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:116 - No match! even though a parent alram LOW_PRIORITY;D;   UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR@org.apache.maven.plugin.dependency.AbstractDependencyMojo;factory#getArtifact(Lorg/apache/maven/plugin/dependency/fromConfiguration/ArtifactItem;)Lorg/apache/maven/artifact/Artifact;:213-213:20 is in unchanged source: org.apache.maven.plugin.dependency.AbstractDependencyMojo
+05:00:37.908 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:116 - No match! even though a parent alram LOW_PRIORITY;D;   UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR@org.apache.maven.plugin.dependency.AbstractFromDependenciesMojo;outputDirectory#execute()V:101-101:20 is in unchanged source: org.apache.maven.plugin.dependency.AbstractFromDependenciesMojo
+05:01:14.291 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:116 - No match! even though a parent alram LOW_PRIORITY;D;   UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR@org.apache.maven.plugin.dependency.AbstractFromDependenciesMojo;outputDirectory#doExecute()V:119-119:20 is in unchanged source: org.apache.maven.plugin.dependency.AbstractFromDependenciesMojo
+05:01:58.138 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:116 - No match! even though a parent alram LOW_PRIORITY;D;   UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR@org.apache.maven.plugin.dependency.fromDependencies.AbstractFromDependenciesMojo;outputDirectory#doExecute()V:126-126:20 is in unchanged source: org.apache.maven.plugin.dependency.fromDependencies.AbstractFromDependenciesMojo
+05:02:03.611 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:59 - Multiple matches! snippet
+05:02:03.612 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:60 - Multiple matches:
+05:02:03.613 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:61 - 	 Parent:NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.BuildClasspathMojo;useJvmChmod#NO_METHOD:-1--1:8 in 1c70e54b528399baa1018131eeda6de6217d4931
+05:02:03.613 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.AbstractResolveMojo;useJvmChmod#NO_METHOD:-1--1:8 in 81d1802c1fd251beae37f87c599dfc75e5420fe2
+05:02:03.614 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.AbstractResolveMojo;ignorePermissions#NO_METHOD:-1--1:11 in 81d1802c1fd251beae37f87c599dfc75e5420fe2
+05:02:03.614 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromDependencies.CopyDependenciesMojo;useJvmChmod#NO_METHOD:-1--1:8 in 81d1802c1fd251beae37f87c599dfc75e5420fe2
+05:02:03.615 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromConfiguration.CopyMojo;useJvmChmod#NO_METHOD:-1--1:8 in 81d1802c1fd251beae37f87c599dfc75e5420fe2
+05:02:03.615 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromDependencies.BuildClasspathMojo;useJvmChmod#NO_METHOD:-1--1:8 in 81d1802c1fd251beae37f87c599dfc75e5420fe2
+05:02:03.616 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromConfiguration.CopyMojo;ignorePermissions#NO_METHOD:-1--1:11 in 81d1802c1fd251beae37f87c599dfc75e5420fe2
+05:02:03.616 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromDependencies.CopyDependenciesMojo;ignorePermissions#NO_METHOD:-1--1:11 in 81d1802c1fd251beae37f87c599dfc75e5420fe2
+05:02:03.616 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromDependencies.BuildClasspathMojo;ignorePermissions#NO_METHOD:-1--1:11 in 81d1802c1fd251beae37f87c599dfc75e5420fe2
+05:02:03.618 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:79 - Some already matched! snippet
+05:02:03.618 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:80 - Some already matched! 
+NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.BuildClasspathMojo;useJvmChmod#NO_METHOD:-1--1:8 is in a changed source: org.apache.maven.plugin.dependency.BuildClasspathMojo
+05:02:03.677 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:59 - Multiple matches! snippet
+05:02:03.678 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:60 - Multiple matches:
+05:02:03.678 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:61 - 	 Parent:LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.BuildClasspathMojo;ignorePermissions#NO_METHOD:-1--1:11 in 1c70e54b528399baa1018131eeda6de6217d4931
+05:02:03.679 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.AbstractResolveMojo;useJvmChmod#NO_METHOD:-1--1:8 in 81d1802c1fd251beae37f87c599dfc75e5420fe2
+05:02:03.679 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.AbstractResolveMojo;ignorePermissions#NO_METHOD:-1--1:11 in 81d1802c1fd251beae37f87c599dfc75e5420fe2
+05:02:03.679 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromDependencies.CopyDependenciesMojo;useJvmChmod#NO_METHOD:-1--1:8 in 81d1802c1fd251beae37f87c599dfc75e5420fe2
+05:02:03.680 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromConfiguration.CopyMojo;useJvmChmod#NO_METHOD:-1--1:8 in 81d1802c1fd251beae37f87c599dfc75e5420fe2
+05:02:03.680 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromDependencies.BuildClasspathMojo;useJvmChmod#NO_METHOD:-1--1:8 in 81d1802c1fd251beae37f87c599dfc75e5420fe2
+05:02:03.682 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromConfiguration.CopyMojo;ignorePermissions#NO_METHOD:-1--1:11 in 81d1802c1fd251beae37f87c599dfc75e5420fe2
+05:02:03.682 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromDependencies.CopyDependenciesMojo;ignorePermissions#NO_METHOD:-1--1:11 in 81d1802c1fd251beae37f87c599dfc75e5420fe2
+05:02:03.683 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromDependencies.BuildClasspathMojo;ignorePermissions#NO_METHOD:-1--1:11 in 81d1802c1fd251beae37f87c599dfc75e5420fe2
+05:02:03.683 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:79 - Some already matched! snippet
+05:02:03.684 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:80 - Some already matched! 
+LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.BuildClasspathMojo;ignorePermissions#NO_METHOD:-1--1:11 is in a changed source: org.apache.maven.plugin.dependency.BuildClasspathMojo
+05:02:03.889 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:70 - All candidates are already matched! exact
+05:02:03.890 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:71 - All matched! 
+NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.AbstractResolveMojo;useJvmChmod#NO_METHOD:-1--1:8 is in a changed source: org.apache.maven.plugin.dependency.AbstractResolveMojo
+05:02:04.665 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:70 - All candidates are already matched! exact
+05:02:04.666 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:71 - All matched! 
+LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.AbstractResolveMojo;ignorePermissions#NO_METHOD:-1--1:11 is in a changed source: org.apache.maven.plugin.dependency.AbstractResolveMojo
+05:02:06.825 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:59 - Multiple matches! snippet
+05:02:06.826 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:60 - Multiple matches:
+05:02:06.826 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:61 - 	 Parent:NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.AbstractResolveMojo;useJvmChmod#NO_METHOD:-1--1:8 in 81d1802c1fd251beae37f87c599dfc75e5420fe2
+05:02:06.827 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.resolvers.AbstractResolveMojo;useJvmChmod#NO_METHOD:-1--1:8 in f5fab12be70287c7e2aeb48ed7085c99a42a1276
+05:02:06.827 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromDependencies.BuildClasspathMojo;useJvmChmod#NO_METHOD:-1--1:8 in f5fab12be70287c7e2aeb48ed7085c99a42a1276
+05:02:06.828 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.resolvers.AbstractResolveMojo;ignorePermissions#NO_METHOD:-1--1:11 in f5fab12be70287c7e2aeb48ed7085c99a42a1276
+05:02:06.829 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromDependencies.BuildClasspathMojo;ignorePermissions#NO_METHOD:-1--1:11 in f5fab12be70287c7e2aeb48ed7085c99a42a1276
+05:02:06.830 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromDependencies.CopyDependenciesMojo;ignorePermissions#NO_METHOD:-1--1:11 in f5fab12be70287c7e2aeb48ed7085c99a42a1276
+05:02:06.830 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromConfiguration.CopyMojo;useJvmChmod#NO_METHOD:-1--1:8 in f5fab12be70287c7e2aeb48ed7085c99a42a1276
+05:02:06.831 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromDependencies.CopyDependenciesMojo;useJvmChmod#NO_METHOD:-1--1:8 in f5fab12be70287c7e2aeb48ed7085c99a42a1276
+05:02:06.831 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromConfiguration.CopyMojo;ignorePermissions#NO_METHOD:-1--1:11 in f5fab12be70287c7e2aeb48ed7085c99a42a1276
+05:02:06.832 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:79 - Some already matched! snippet
+05:02:06.833 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:80 - Some already matched! 
+NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.AbstractResolveMojo;useJvmChmod#NO_METHOD:-1--1:8 is in a changed source: org.apache.maven.plugin.dependency.AbstractResolveMojo
+05:02:07.774 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:59 - Multiple matches! snippet
+05:02:07.775 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:60 - Multiple matches:
+05:02:07.776 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:61 - 	 Parent:LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.AbstractResolveMojo;ignorePermissions#NO_METHOD:-1--1:11 in 81d1802c1fd251beae37f87c599dfc75e5420fe2
+05:02:07.776 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.resolvers.AbstractResolveMojo;useJvmChmod#NO_METHOD:-1--1:8 in f5fab12be70287c7e2aeb48ed7085c99a42a1276
+05:02:07.776 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromDependencies.BuildClasspathMojo;useJvmChmod#NO_METHOD:-1--1:8 in f5fab12be70287c7e2aeb48ed7085c99a42a1276
+05:02:07.778 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.resolvers.AbstractResolveMojo;ignorePermissions#NO_METHOD:-1--1:11 in f5fab12be70287c7e2aeb48ed7085c99a42a1276
+05:02:07.779 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromDependencies.BuildClasspathMojo;ignorePermissions#NO_METHOD:-1--1:11 in f5fab12be70287c7e2aeb48ed7085c99a42a1276
+05:02:07.779 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromDependencies.CopyDependenciesMojo;ignorePermissions#NO_METHOD:-1--1:11 in f5fab12be70287c7e2aeb48ed7085c99a42a1276
+05:02:07.780 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromConfiguration.CopyMojo;useJvmChmod#NO_METHOD:-1--1:8 in f5fab12be70287c7e2aeb48ed7085c99a42a1276
+05:02:07.780 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromDependencies.CopyDependenciesMojo;useJvmChmod#NO_METHOD:-1--1:8 in f5fab12be70287c7e2aeb48ed7085c99a42a1276
+05:02:07.781 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromConfiguration.CopyMojo;ignorePermissions#NO_METHOD:-1--1:11 in f5fab12be70287c7e2aeb48ed7085c99a42a1276
+05:02:07.781 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:79 - Some already matched! snippet
+05:02:07.782 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:80 - Some already matched! 
+LOW_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.AbstractResolveMojo;ignorePermissions#NO_METHOD:-1--1:11 is in a changed source: org.apache.maven.plugin.dependency.AbstractResolveMojo
+05:02:07.840 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:70 - All candidates are already matched! exact
+05:02:07.841 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:71 - All matched! 
+NORMAL_PRIORITY;C;   MF_CLASS_MASKS_FIELD@org.apache.maven.plugin.dependency.fromDependencies.BuildClasspathMojo;useJvmChmod#NO_METHOD:-1--1:8 is in a changed source: org.apache.maven.plugin.dependency.fromDependencies.BuildClasspathMojo
+05:02:10.795 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:59 - Multiple matches! snippet
+05:02:10.796 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:60 - Multiple matches:
+05:02:10.796 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:61 - 	 Parent:NORMAL_PRIORITY;V;   EI_EXPOSE_REP@org.apache.maven.plugin.dependency.AnalyzeDepMgt;project#getProject()Lorg/apache/maven/project/MavenProject;:337-337:18 in f5fab12be70287c7e2aeb48ed7085c99a42a1276
+05:02:10.796 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;V;   EI_EXPOSE_REP@org.apache.maven.plugin.dependency.fromConfiguration.ArtifactItem;artifact#getArtifact()Lorg/apache/maven/artifact/Artifact;:337-337:18 in 00595800dc13ddd5f61c5e8edf5d683484b03b30
+05:02:10.797 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;V;   EI_EXPOSE_REP@org.apache.maven.plugin.dependency.analyze.AnalyzeDepMgt;project#getProject()Lorg/apache/maven/project/MavenProject;:337-337:18 in 00595800dc13ddd5f61c5e8edf5d683484b03b30
+05:02:12.800 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:116 - No match! even though a parent alram NORMAL_PRIORITY;X;   OBL_UNSATISFIED_OBLIGATION@org.apache.maven.plugin.dependency.HelpMojo;NO_FIELD#build()Lorg/w3c/dom/Document;:67-67:20 is in unchanged source: org.apache.maven.plugin.dependency.HelpMojo
+05:02:12.896 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:70 - All candidates are already matched! exact
+05:02:12.897 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:71 - All matched! 
+NORMAL_PRIORITY;V;   EI_EXPOSE_REP@org.apache.maven.plugin.dependency.fromConfiguration.ArtifactItem;artifact#getArtifact()Lorg/apache/maven/artifact/Artifact;:337-337:18 is in a changed source: org.apache.maven.plugin.dependency.fromConfiguration.ArtifactItem
+05:02:12.934 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:116 - No match! even though a parent alram LOW_PRIORITY;B;   UI_INHERITANCE_UNSAFE_GETRESOURCE@org.apache.maven.plugin.dependency.HelpMojo;NO_FIELD#build()Lorg/w3c/dom/Document;:67-67:19 is in unchanged source: org.apache.maven.plugin.dependency.HelpMojo
+05:02:22.410 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:116 - No match! even though a parent alram LOW_PRIORITY;D;   UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR@org.apache.maven.plugin.dependency.fromDependencies.AbstractFromDependenciesMojo;outputDirectory#doExecute()V:138-138:20 is in unchanged source: org.apache.maven.plugin.dependency.fromDependencies.AbstractFromDependenciesMojo
+05:04:38.692 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:59 - Multiple matches! snippet
+05:04:38.693 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:60 - Multiple matches:
+05:04:38.693 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:61 - 	 Parent:NORMAL_PRIORITY;V;   EI_EXPOSE_REP@org.apache.maven.plugins.dependency.AbstractDependencyMojo;project#getProject()Lorg/apache/maven/project/MavenProject;:336-336:18 in a1437d399a5f6c37a09864be1427000637fe2b89
+05:04:38.694 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;V;   EI_EXPOSE_REP@org.apache.maven.plugins.dependency.AbstractDependencyMojo;project#getProject()Lorg/apache/maven/project/MavenProject;:337-337:18 in 30f058f420f51fa782f2acc30cd7212d82905663
+05:04:38.694 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;V;   EI_EXPOSE_REP@org.apache.maven.plugins.dependency.fromConfiguration.ArtifactItem;artifact#getArtifact()Lorg/apache/maven/artifact/Artifact;:337-337:18 in 30f058f420f51fa782f2acc30cd7212d82905663
+05:04:40.808 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:59 - Multiple matches! snippet
+05:04:40.809 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:60 - Multiple matches:
+05:04:40.809 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:61 - 	 Parent:NORMAL_PRIORITY;V;   EI_EXPOSE_REP@org.apache.maven.plugins.dependency.fromConfiguration.ArtifactItem;artifact#getArtifact()Lorg/apache/maven/artifact/Artifact;:348-348:18 in a1437d399a5f6c37a09864be1427000637fe2b89
+05:04:40.809 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;V;   EI_EXPOSE_REP@org.apache.maven.plugins.dependency.AbstractDependencyMojo;project#getProject()Lorg/apache/maven/project/MavenProject;:337-337:18 in 30f058f420f51fa782f2acc30cd7212d82905663
+05:04:40.810 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:NORMAL_PRIORITY;V;   EI_EXPOSE_REP@org.apache.maven.plugins.dependency.fromConfiguration.ArtifactItem;artifact#getArtifact()Lorg/apache/maven/artifact/Artifact;:337-337:18 in 30f058f420f51fa782f2acc30cd7212d82905663
+05:04:40.810 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:79 - Some already matched! snippet
+05:04:40.810 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:80 - Some already matched! 
+NORMAL_PRIORITY;V;   EI_EXPOSE_REP@org.apache.maven.plugins.dependency.fromConfiguration.ArtifactItem;artifact#getArtifact()Lorg/apache/maven/artifact/Artifact;:348-348:18 is in a changed source: org.apache.maven.plugins.dependency.fromConfiguration.ArtifactItem
+05:06:19.445 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:59 - Multiple matches! snippet
+05:06:19.447 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:60 - Multiple matches:
+05:06:19.447 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:61 - 	 Parent:LOW_PRIORITY;D;   UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR@org.apache.maven.plugins.dependency.AbstractDependencyMojo;archiverManager#unpack(Lorg/apache/maven/artifact/Artifact;Ljava/lang/String;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V:263-263:20 in 2f4e6f6376b56ea6244146f3f0d067d1ed526e6d
+05:06:19.448 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;D;   UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR@org.apache.maven.plugins.dependency.analyze.AbstractAnalyzeMojo;context#createProjectDependencyAnalyzer()Lorg/apache/maven/shared/dependency/analyzer/ProjectDependencyAnalyzer;:270-270:20 in c09bee4e143e8424d66cf6e3f8e7f95978435b1c
+05:06:19.448 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:62 - 	 Child:LOW_PRIORITY;D;   UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR@org.apache.maven.plugins.dependency.AbstractDependencyMojo;archiverManager#unpack(Lorg/apache/maven/artifact/Artifact;Ljava/lang/String;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Lorg/codehaus/plexus/components/io/filemappers/FileMapper;)V:270-270:20 in c09bee4e143e8424d66cf6e3f8e7f95978435b1c
+05:06:20.149 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:70 - All candidates are already matched! exact
+05:06:20.150 [main] ERROR e.l.u.s.alarm.tracking.AlarmMatcher$:71 - All matched! 
+LOW_PRIORITY;D;   UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR@org.apache.maven.plugins.dependency.analyze.AbstractAnalyzeMojo;context#createProjectDependencyAnalyzer()Lorg/apache/maven/shared/dependency/analyzer/ProjectDependencyAnalyzer;:270-270:20 is in a changed source: org.apache.maven.plugins.dependency.analyze.AbstractAnalyzeMojo
+05:14:31.038 [main] INFO  e.l.u.s.alarm.tracking.AlarmTracker:114 - 4801bd7c1d2bbbe5d9547d986a7410074686886d->2d1587f782d6a93e7e68d3a77878d36db7d4f200 has already been matched.
+05:14:36.367 [main] INFO  e.l.u.s.alarm.tracking.AlarmTracker:114 - 1150e4f895f16dd422169112aedef8e9085c7369->f8b0f78be24696ef7d803f1ab86b0bf93ba9c805 has already been matched.
+05:14:47.091 [main] INFO  e.l.u.s.alarm.tracking.AlarmTracker:114 - 9b51b5cc67f5a0291720fc0238065444f569b0e6->50568fc4f34b42451456bed33c47816399169b09 has already been matched.
+05:14:56.962 [main] INFO  e.l.u.s.alarm.tracking.AlarmTracker:114 - 7005e7cd642d88819c175566d0a821799f47f061->89d0da961850fc83e359068feda106a1a9858eb5 has already been matched.
+05:15:07.048 [main] INFO  e.l.u.s.alarm.tracking.AlarmTracker:114 - 89d0da961850fc83e359068feda106a1a9858eb5->9b51b5cc67f5a0291720fc0238065444f569b0e6 has already been matched.
+05:15:17.227 [main] INFO  e.l.u.s.alarm.tracking.AlarmTracker:114 - ac9c6ae1f221c259ec840a0847b2359daadf45a0->7005e7cd642d88819c175566d0a821799f47f061 has already been matched.
+05:19:37.130 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, --version],/usr/bin
+05:19:37.142 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return 'git version 2.17.1'
+05:19:37.142 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
 
-10:44:16.125 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, config, --system, --edit],/usr/bin
-10:44:16.131 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return '/etc/gitconfig'
-10:44:16.132 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+05:19:37.142 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, config, --system, --edit],/usr/bin
+05:19:37.147 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return '/etc/gitconfig'
+05:19:37.147 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
 
-10:44:16.209 [main] INFO  edu.lu.uni.serval.scm.git.GitProxy:68 - Repository connected: /root/lxyeah/exp/violation/repos/repos-a/maven-dependency-plugin/.git
-11:58:52.798 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, --version],/usr/bin
-11:58:52.878 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return 'git version 2.17.1'
-11:58:52.879 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
-
-11:58:52.879 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, config, --system, --edit],/usr/bin
-11:58:52.887 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return '/etc/gitconfig'
-11:58:52.887 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
-
-11:58:52.974 [main] INFO  edu.lu.uni.serval.scm.git.GitProxy:68 - Repository connected: /root/lxyeah/exp/violation/repos/repos-a/maven-dependency-plugin/.git
-12:03:51.087 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, --version],/usr/bin
-12:03:51.111 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return 'git version 2.17.1'
-12:03:51.112 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
-
-12:03:51.112 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, config, --system, --edit],/usr/bin
-12:03:51.141 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return '/etc/gitconfig'
-12:03:51.143 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
-
-12:03:51.236 [main] INFO  edu.lu.uni.serval.scm.git.GitProxy:68 - Repository connected: /root/lxyeah/exp/violation/repos/repos-a/maven-dependency-plugin/.git
+05:19:37.199 [main] INFO  edu.lu.uni.serval.scm.git.GitProxy:68 - Repository connected: /root/lxyeah/exp/violation/repos/repos-a/maven-dependency-plugin/.git
+05:19:38.411 [main] ERROR e.l.u.s.a.t.TrackingExecutorByProject$:11 - Unknown Error
+org.neo4j.driver.v1.exceptions.ClientException: Invalid input '.': expected 'o/O', 'r/R' or 'a/A' (line 15, column 39 (offset: 638))
+"                                     c.field = {field}"
+                                       ^
+	at org.neo4j.driver.internal.net.SocketResponseHandler.handleFailureMessage(SocketResponseHandler.java:76) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.messaging.PackStreamMessageFormatV1$Reader.unpackFailureMessage(PackStreamMessageFormatV1.java:470) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.messaging.PackStreamMessageFormatV1$Reader.read(PackStreamMessageFormatV1.java:431) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.net.SocketClient.receiveOne(SocketClient.java:191) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.net.SocketConnection.receiveOne(SocketConnection.java:217) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.net.ConcurrencyGuardingConnection.receiveOne(ConcurrencyGuardingConnection.java:165) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.net.pooling.PooledSocketConnection.receiveOne(PooledSocketConnection.java:183) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.InternalStatementResult.receiveOne(InternalStatementResult.java:335) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.InternalStatementResult.tryFetchNext(InternalStatementResult.java:325) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.InternalStatementResult.hasNext(InternalStatementResult.java:193) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.InternalStatementResult.list(InternalStatementResult.java:262) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.InternalStatementResult.list(InternalStatementResult.java:256) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at edu.lu.uni.serval.alarm.util.db.graph.neo4j.VioDBFacade$.connect2Parent(VioDBFacade.scala:161) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmMatcher$.edu$lu$uni$serval$alarm$tracking$AlarmMatcher$$recordSuccessMatch$1(AlarmMatcher.scala:99) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmMatcher$.edu$lu$uni$serval$alarm$tracking$AlarmMatcher$$findExactMatching$1(AlarmMatcher.scala:120) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmMatcher$$anonfun$matchChildParent$1.apply(AlarmMatcher.scala:142) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmMatcher$$anonfun$matchChildParent$1.apply(AlarmMatcher.scala:126) ~[classes/:na]
+	at scala.collection.mutable.HashSet.foreach(HashSet.scala:78) ~[scala-library-2.11.7.jar:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmMatcher$.matchChildParent(AlarmMatcher.scala:126) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmTracker$$anonfun$edu$lu$uni$serval$alarm$tracking$AlarmTracker$$recurChildren$1$1.apply(AlarmTracker.scala:120) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmTracker$$anonfun$edu$lu$uni$serval$alarm$tracking$AlarmTracker$$recurChildren$1$1.apply(AlarmTracker.scala:106) ~[classes/:na]
+	at scala.collection.mutable.HashSet.foreach(HashSet.scala:78) ~[scala-library-2.11.7.jar:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmTracker.edu$lu$uni$serval$alarm$tracking$AlarmTracker$$recurChildren$1(AlarmTracker.scala:106) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmTracker.startTracking(AlarmTracker.scala:130) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmTracker$$anonfun$trackAlarms$1.apply(AlarmTracker.scala:54) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmTracker$$anonfun$trackAlarms$1.apply(AlarmTracker.scala:54) ~[classes/:na]
+	at scala.collection.mutable.HashSet.foreach(HashSet.scala:78) ~[scala-library-2.11.7.jar:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmTracker.trackAlarms(AlarmTracker.scala:54) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.TrackingExecutorByProject$.internal(TrackingExecutorByProject.scala:71) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.TrackingExecutorByProject$.main(TrackingExecutorByProject.scala:12) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.TrackingExecutorByProject.main(TrackingExecutorByProject.scala) [classes/:na]
