@@ -8,7 +8,7 @@ maven-dependency-plugin,WMI_WRONG_MAP_ITERATOR,1
 maven-dependency-plugin,DM_DEFAULT_ENCODING,9
 maven-dependency-plugin,OBL_UNSATISFIED_OBLIGATION,1
 maven-dependency-plugin,EI_EXPOSE_REP,1
-maven-dependency-plugin,UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD,3
+maven-dependency-plugin,UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD,4
 maven-dependency-plugin,NP_UNWRITTEN_FIELD,4
 maven-dependency-plugin,DLS_DEAD_LOCAL_STORE,2
 maven-dependency-plugin,ES_COMPARING_PARAMETER_STRING_WITH_EQ,1

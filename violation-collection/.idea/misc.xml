@@ -13,10 +13,6 @@
     <option name="openedFilesInfos">
       <list>
         <OpenedFileInfo>
-          <option name="caretOffset" value="2367" />
-          <option name="fileUrl" value="file://$PROJECT_DIR$/src/main/scala/edu/lu/uni/serval/alarm/tracking/AlarmTracker.scala" />
-        </OpenedFileInfo>
-        <OpenedFileInfo>
           <option name="caretOffset" value="4601" />
           <option name="fileUrl" value="file://$PROJECT_DIR$/src/main/scala/edu/lu/uni/serval/alarm/util/db/graph/neo4j/VioDBFacade.scala" />
         </OpenedFileInfo>
@@ -37,8 +33,24 @@
           <option name="fileUrl" value="file://$PROJECT_DIR$/src/main/scala/edu/lu/uni/serval/alarm/tracking/AlarmDataReader.scala" />
         </OpenedFileInfo>
         <OpenedFileInfo>
-          <option name="caretOffset" value="1430" />
+          <option name="caretOffset" value="338" />
           <option name="fileUrl" value="file://$PROJECT_DIR$/src/main/scala/edu/lu/uni/serval/alarm/tracking/TrackingExecutorByProject.scala" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="678" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/src/main/scala/edu/lu/uni/serval/alarm/tracking/FixedAlarmCollector.scala" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="556" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/src/main/scala/edu/lu/uni/serval/alarm/tracking/UnfixedAlarmCollector.scala" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="0" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/maven-dependency-plugin-fixed-alarms.csv" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="0" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/unfixed-maven-dependency-plugin.csv" />
         </OpenedFileInfo>
       </list>
     </option>
