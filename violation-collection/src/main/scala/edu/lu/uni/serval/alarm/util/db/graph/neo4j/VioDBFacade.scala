@@ -72,7 +72,7 @@ object VioDBFacade {
 
 
   def addNewOriginViolation(id: String, project: String, commit: String,
-                            vtype: String, category: String, sLine: Int, eLine: Int, rank: Int, priority: Int
+                            vtype: String, category: String, sLine: Int, eLine: Int, rank: Int, priority: Int, field: String, method: String
                            ) = {
     val result = session.run(
       """MERGE (a:Violation {id: {id}})
@@ -85,7 +85,9 @@ object VioDBFacade {
 												 a.sLine = {sLine}, 
 												 a.eLine = {eLine},
                          a.rank = {rank},
-                         a.priority = {priority}
+                         a.priority = {priority},
+                         a.field = {field},
+                         a.method = {method}
 						RETURN a""",
       value(
         Map("id" -> id,
@@ -97,7 +99,9 @@ object VioDBFacade {
           "sLine" -> sLine,
           "eLine" -> eLine,
           "rank" -> rank,
-          "priority" -> priority
+          "priority" -> priority,
+          "field" -> field,
+          "method" -> method
         ).asJava
       )
     )
