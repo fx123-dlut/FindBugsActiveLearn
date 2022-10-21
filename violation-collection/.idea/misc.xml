@@ -17,7 +17,7 @@
           <option name="fileUrl" value="file://$PROJECT_DIR$/src/main/scala/edu/lu/uni/serval/alarm/tracking/AlarmTracker.scala" />
         </OpenedFileInfo>
         <OpenedFileInfo>
-          <option name="caretOffset" value="4599" />
+          <option name="caretOffset" value="4601" />
           <option name="fileUrl" value="file://$PROJECT_DIR$/src/main/scala/edu/lu/uni/serval/alarm/util/db/graph/neo4j/VioDBFacade.scala" />
         </OpenedFileInfo>
         <OpenedFileInfo>
@@ -37,7 +37,7 @@
           <option name="fileUrl" value="file://$PROJECT_DIR$/src/main/scala/edu/lu/uni/serval/alarm/tracking/AlarmDataReader.scala" />
         </OpenedFileInfo>
         <OpenedFileInfo>
-          <option name="caretOffset" value="327" />
+          <option name="caretOffset" value="1430" />
           <option name="fileUrl" value="file://$PROJECT_DIR$/src/main/scala/edu/lu/uni/serval/alarm/tracking/TrackingExecutorByProject.scala" />
         </OpenedFileInfo>
       </list>

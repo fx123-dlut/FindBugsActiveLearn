@@ -210,3 +210,56 @@ org.neo4j.driver.v1.exceptions.ClientException: Invalid input '.': expected 'o/O
 	at edu.lu.uni.serval.alarm.tracking.TrackingExecutorByProject$.internal(TrackingExecutorByProject.scala:71) ~[classes/:na]
 	at edu.lu.uni.serval.alarm.tracking.TrackingExecutorByProject$.main(TrackingExecutorByProject.scala:12) ~[classes/:na]
 	at edu.lu.uni.serval.alarm.tracking.TrackingExecutorByProject.main(TrackingExecutorByProject.scala) [classes/:na]
+05:25:46.727 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, --version],/usr/bin
+05:25:46.740 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return 'git version 2.17.1'
+05:25:46.741 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+
+05:25:46.741 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, config, --system, --edit],/usr/bin
+05:25:46.746 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return '/etc/gitconfig'
+05:25:46.747 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+
+05:25:46.806 [main] INFO  edu.lu.uni.serval.scm.git.GitProxy:68 - Repository connected: /root/lxyeah/exp/violation/repos/repos-a/maven-dependency-plugin/.git
+05:25:47.928 [main] ERROR e.l.u.s.a.t.TrackingExecutorByProject$:11 - Unknown Error
+org.neo4j.driver.v1.exceptions.ClientException: Invalid input '.': expected 'o/O', 'r/R' or 'a/A' (line 15, column 39 (offset: 638))
+"                                     c.field = {field}"
+                                       ^
+	at org.neo4j.driver.internal.net.SocketResponseHandler.handleFailureMessage(SocketResponseHandler.java:76) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.messaging.PackStreamMessageFormatV1$Reader.unpackFailureMessage(PackStreamMessageFormatV1.java:470) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.messaging.PackStreamMessageFormatV1$Reader.read(PackStreamMessageFormatV1.java:431) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.net.SocketClient.receiveOne(SocketClient.java:191) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.net.SocketConnection.receiveOne(SocketConnection.java:217) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.net.ConcurrencyGuardingConnection.receiveOne(ConcurrencyGuardingConnection.java:165) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.net.pooling.PooledSocketConnection.receiveOne(PooledSocketConnection.java:183) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.InternalStatementResult.receiveOne(InternalStatementResult.java:335) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.InternalStatementResult.tryFetchNext(InternalStatementResult.java:325) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.InternalStatementResult.hasNext(InternalStatementResult.java:193) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.InternalStatementResult.list(InternalStatementResult.java:262) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at org.neo4j.driver.internal.InternalStatementResult.list(InternalStatementResult.java:256) ~[neo4j-java-driver-1.4.1.jar:1.4.1-1325ff893b0bbc20f8a0de6c9dd9bd15124cd0d9]
+	at edu.lu.uni.serval.alarm.util.db.graph.neo4j.VioDBFacade$.connect2Parent(VioDBFacade.scala:161) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmMatcher$.edu$lu$uni$serval$alarm$tracking$AlarmMatcher$$recordSuccessMatch$1(AlarmMatcher.scala:99) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmMatcher$.edu$lu$uni$serval$alarm$tracking$AlarmMatcher$$findExactMatching$1(AlarmMatcher.scala:120) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmMatcher$$anonfun$matchChildParent$1.apply(AlarmMatcher.scala:142) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmMatcher$$anonfun$matchChildParent$1.apply(AlarmMatcher.scala:126) ~[classes/:na]
+	at scala.collection.mutable.HashSet.foreach(HashSet.scala:78) ~[scala-library-2.11.7.jar:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmMatcher$.matchChildParent(AlarmMatcher.scala:126) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmTracker$$anonfun$edu$lu$uni$serval$alarm$tracking$AlarmTracker$$recurChildren$1$1.apply(AlarmTracker.scala:120) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmTracker$$anonfun$edu$lu$uni$serval$alarm$tracking$AlarmTracker$$recurChildren$1$1.apply(AlarmTracker.scala:106) ~[classes/:na]
+	at scala.collection.mutable.HashSet.foreach(HashSet.scala:78) ~[scala-library-2.11.7.jar:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmTracker.edu$lu$uni$serval$alarm$tracking$AlarmTracker$$recurChildren$1(AlarmTracker.scala:106) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmTracker.startTracking(AlarmTracker.scala:130) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmTracker$$anonfun$trackAlarms$1.apply(AlarmTracker.scala:54) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmTracker$$anonfun$trackAlarms$1.apply(AlarmTracker.scala:54) ~[classes/:na]
+	at scala.collection.mutable.HashSet.foreach(HashSet.scala:78) ~[scala-library-2.11.7.jar:na]
+	at edu.lu.uni.serval.alarm.tracking.AlarmTracker.trackAlarms(AlarmTracker.scala:54) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.TrackingExecutorByProject$.internal(TrackingExecutorByProject.scala:71) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.TrackingExecutorByProject$.main(TrackingExecutorByProject.scala:12) ~[classes/:na]
+	at edu.lu.uni.serval.alarm.tracking.TrackingExecutorByProject.main(TrackingExecutorByProject.scala) [classes/:na]
+05:27:08.210 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, --version],/usr/bin
+05:27:08.226 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return 'git version 2.17.1'
+05:27:08.226 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+
+05:27:08.227 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, config, --system, --edit],/usr/bin
+05:27:08.233 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return '/etc/gitconfig'
+05:27:08.233 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+
+05:27:08.280 [main] INFO  edu.lu.uni.serval.scm.git.GitProxy:68 - Repository connected: /root/lxyeah/exp/violation/repos/repos-a/maven-dependency-plugin/.git

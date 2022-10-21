@@ -135,8 +135,8 @@ object VioDBFacade {
 																		 c.sLine = {sLine}, 
 																		 c.eLine = {eLine},
                                      c.rank = {rank},
-                                     c.priority = {priority}
-                                     c.field = {field}
+                                     c.priority = {priority},
+                                     c.field = {field},
                                      c.method = {method}
 										MERGE (p)-[:CHILD]->(c)
   									MERGE (c)-[:PARENT]->(p)
