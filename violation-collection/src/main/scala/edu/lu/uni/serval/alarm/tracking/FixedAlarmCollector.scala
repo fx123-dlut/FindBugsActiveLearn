@@ -87,6 +87,8 @@ object FixedAlarmCollector extends LazyLogging
 			val rank = alarmNode.get("rank").asInt()
 			val sLine = alarmNode.get("sLine").asInt()
 			val eLine = alarmNode.get("eLine").asInt()
+			val field = alarmNode.get("field").asString()
+			val method = alarmNode.get("method").asString()
 
 			addVtypeValue2Set(vtypeMap, vtype, alarmNode)
 
@@ -122,7 +124,7 @@ object FixedAlarmCollector extends LazyLogging
 			else
 			{
 				val d = diffMap(mainBuggyClassPath)
-				val resultString = s"$category,$vtype,$priority,$rank,$prj,$oid,$buggycommit,${d.getOldPath},$sLine,$eLine,$fixer,${d.getNewPath}\n"
+				val resultString = s"$category,$vtype,$priority,$rank,$prj,$field,$method,$oid,$buggycommit,${d.getOldPath},$sLine,$eLine,$fixer,${d.getNewPath}\n"
 				FileUtils.write(outputFile, resultString, "UTF-8", true)
 
 				// add to summary

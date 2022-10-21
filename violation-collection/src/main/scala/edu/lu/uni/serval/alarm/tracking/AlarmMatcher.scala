@@ -99,7 +99,7 @@ object AlarmMatcher extends LazyLogging {
         VioDBFacade.connect2Parent(
           parentKey, childKey, child.commitHash, matchedby,
           matchedChild.startLine, matchedChild.endLine, matchedChild.rank,
-          matchedChild.priority)
+          matchedChild.priority, matchedChild.fieldName, matchedChild.methodName)
         //VioDBFacade.close()
 
         true

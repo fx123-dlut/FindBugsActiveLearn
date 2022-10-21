@@ -132,9 +132,11 @@ object UnfixedAlarmCollector
 							val commitHash = node.get("commit").asString()
 							val sLine = node.get("sLine").asInt()
 							val eLine = node.get("eLine").asInt()
+							val field = node.get("field").asString()
+							val method = node.get("method").asString()
 							val resolution = if(node.get("resolution").isNull()) "" else node.get("resolution").asString()
 
-							FileUtils.write(outFile, s"$category,$vtype,$priority,$rank,$project,$oid,$commitHash,$path,$sLine,$eLine\n", "UTF-8", true)
+							FileUtils.write(outFile, s"$category,$vtype,$priority,$rank,$project,$field,$method,$oid,$commitHash,$path,$sLine,$eLine\n", "UTF-8", true)
 						})
 					}
 				}

@@ -1,0 +1,36 @@
+09:23:13.267 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, --version],/usr/bin
+09:23:13.281 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return 'git version 2.17.1'
+09:23:13.282 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+
+09:23:13.282 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, config, --system, --edit],/usr/bin
+09:23:13.302 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return '/etc/gitconfig'
+09:23:13.303 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+
+09:23:13.375 [main] INFO  edu.lu.uni.serval.scm.git.GitProxy:68 - Repository connected: /root/lxyeah/exp/violation/repos/repos-a/maven-dependency-plugin/.git
+10:44:16.046 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, --version],/usr/bin
+10:44:16.124 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return 'git version 2.17.1'
+10:44:16.125 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+
+10:44:16.125 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, config, --system, --edit],/usr/bin
+10:44:16.131 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return '/etc/gitconfig'
+10:44:16.132 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+
+10:44:16.209 [main] INFO  edu.lu.uni.serval.scm.git.GitProxy:68 - Repository connected: /root/lxyeah/exp/violation/repos/repos-a/maven-dependency-plugin/.git
+11:58:52.798 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, --version],/usr/bin
+11:58:52.878 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return 'git version 2.17.1'
+11:58:52.879 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+
+11:58:52.879 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, config, --system, --edit],/usr/bin
+11:58:52.887 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return '/etc/gitconfig'
+11:58:52.887 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+
+11:58:52.974 [main] INFO  edu.lu.uni.serval.scm.git.GitProxy:68 - Repository connected: /root/lxyeah/exp/violation/repos/repos-a/maven-dependency-plugin/.git
+12:03:51.087 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, --version],/usr/bin
+12:03:51.111 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return 'git version 2.17.1'
+12:03:51.112 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+
+12:03:51.112 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, config, --system, --edit],/usr/bin
+12:03:51.141 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return '/etc/gitconfig'
+12:03:51.143 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+
+12:03:51.236 [main] INFO  edu.lu.uni.serval.scm.git.GitProxy:68 - Repository connected: /root/lxyeah/exp/violation/repos/repos-a/maven-dependency-plugin/.git

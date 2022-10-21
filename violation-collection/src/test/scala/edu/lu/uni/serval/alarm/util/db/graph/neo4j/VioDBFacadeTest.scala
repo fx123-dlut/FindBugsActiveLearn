@@ -10,8 +10,8 @@ class VioDBFacadeTest
 		VioDBFacade.init()
 		// (id: String, project: String, commit: String,
 																//vtype: String, category: String, sLine: Int, eLine: Int)
-//		VioDBFacade.addNewOriginViolation("new:commons-math:type", "commons-math",
-//				"a142341324324", "NPE", "category1", 213, 214, 5, 1)
+		VioDBFacade.addNewOriginViolation("new:commons-math:type", "commons-math",
+				"a142341324324", "NPE", "category1", 213, 214, 5, 1, "a", "b")
 		VioDBFacade.close()
 	}
 
@@ -21,7 +21,7 @@ class VioDBFacadeTest
 		VioDBFacade.init()
 		//id: String, pid: String, commit: String, sLine: Int, eLine: Int
 		VioDBFacade.connect2Parent(
-				"new:commons-math:type", "child:commons-math:child", "hash", "b142341324324", 213, 214,4,1)
+				"new:commons-math:type", "child:commons-math:child", "hash", "b142341324324", 213, 214,4,1, "a", "b")
 		VioDBFacade.close()
 	}
 
