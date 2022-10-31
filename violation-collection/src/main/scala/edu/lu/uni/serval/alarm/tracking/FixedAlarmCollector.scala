@@ -89,7 +89,7 @@ object FixedAlarmCollector extends LazyLogging
 			val eLine = alarmNode.get("eLine").asInt()
 			val method = alarmNode.get("method").asString()
 			val field = alarmNode.get("field").asString()
-			val resolution = if(node.get("resolution").isNull()) "" else node.get("resolution").asString()
+			val resolution = if(alarmNode.get("resolution").isNull()) "" else alarmNode.get("resolution").asString()
 
 			addVtypeValue2Set(vtypeMap, vtype, alarmNode)
 
