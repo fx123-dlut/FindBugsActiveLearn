@@ -30,8 +30,8 @@ object AutoExpConfShellWriter
   	val workingDirPath = workingDir.getCanonicalPath
 
   	val tmpDir = "/tmp/exp/"
-  	val javaRT = "/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java"
-		val libDir = "/root/FindBugsActiveLearn/violation-collection/lib/*:/root/FindBugsActiveLearn/violation-collection/target/violation-collection-0.1-SNAPSHOT.jar"
+		val javaRT = "/root/Java/jdk1.8.0_311/bin/java"
+		val libDir = "/data/tmp/*"
 		val confDir = new File(workingDir + "/conf")
   	val shellDir = new File(workingDir + "/shell")
 
