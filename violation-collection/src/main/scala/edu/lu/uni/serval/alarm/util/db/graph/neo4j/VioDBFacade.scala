@@ -120,7 +120,7 @@ object VioDBFacade {
     }
   }
 
-  def connect2Parent(pid: String, id: String, commit: String, matched: String, sLine: Int, eLine: Int, rank: Int, priority: Int) = {
+  def connect2Parent(pid: String, id: String, commit: String, matched: String, sLine: Int, eLine: Int, rank: Int, priority: Int, field: String, method: String) = {
     val result = session.run(
       """MATCH (p:Violation { id: {pid} } )
 															MERGE (c:Violation { id: {id} } )
@@ -135,7 +135,9 @@ object VioDBFacade {
 																		 c.sLine = {sLine}, 
 																		 c.eLine = {eLine},
                                      c.rank = {rank},
-                                     c.priority = {priority}
+                                     c.priority = {priority},
+                                     c.field = {field},
+                                     c.method = {method}
 										MERGE (p)-[:CHILD]->(c)
   									MERGE (c)-[:PARENT]->(p)
 										RETURN p, c
@@ -149,7 +151,9 @@ object VioDBFacade {
           "sLine" -> sLine,
           "eLine" -> eLine,
           "rank" -> rank,
-          "priority" -> priority
+          "priority" -> priority,
+          "field" -> field,
+          "method" -> method
         ).asJava
       )
     )

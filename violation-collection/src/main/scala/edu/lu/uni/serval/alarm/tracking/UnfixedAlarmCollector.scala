@@ -132,8 +132,8 @@ object UnfixedAlarmCollector
 							val commitHash = node.get("commit").asString()
 							val sLine = node.get("sLine").asInt()
 							val eLine = node.get("eLine").asInt()
-							val method = alarmNode.get("method").asString()
-							val field = alarmNode.get("field").asString()
+							val field = node.get("field").asString()
+							val method = node.get("method").asString()
 							val resolution = if(node.get("resolution").isNull()) "" else node.get("resolution").asString()
 							val emptyCeil = ""
 
