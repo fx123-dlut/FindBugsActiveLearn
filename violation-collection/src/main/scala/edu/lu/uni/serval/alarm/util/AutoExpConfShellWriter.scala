@@ -31,7 +31,7 @@ object AutoExpConfShellWriter
 
   	val tmpDir = "/tmp/exp/"
 		val javaRT = "/root/Java/jdk1.8.0_311/bin/java"
-		val libDir = "/data/tmp"
+		val libDir = "/data/tmp/*"
 		val confDir = new File(workingDir + "/conf")
   	val shellDir = new File(workingDir + "/shell")
 
