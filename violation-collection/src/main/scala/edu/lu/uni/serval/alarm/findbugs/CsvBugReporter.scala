@@ -117,12 +117,18 @@ class CsvBugReporter(outputPath: String) extends TextUIBugReporter {
       case _ => (aSourceLine.getStartLine, aSourceLine.getEndLine)
     }
 
+    val pMethodLine = pMethodLine match {
+      case null -> (-1, -1)
+      case _ => (pMethodLine.getStartLine, pMethodLine.getEndLine)
+    }
+
     //bugInstance.getPrimarySourceLineAnnotation.getSourcePath
     /*Console.println(
     		(sClass, sField, sMethod, pSourceLine)
     		)*/
 
-    val bugRow = List(prioirty, categoryAbbrev, bugAbbv, sClass, sField, sMethod, pSourceLine._1, pSourceLine._2, aRank)
+    val bugRow = List(prioirty, categoryAbbrev, bugAbbv, sClass, sField, sMethod,
+      pSourceLine._1, pSourceLine._2, pMethodLine._1, pMethodLine._2, aRank)
     alarmList += bugRow
   }
 }
