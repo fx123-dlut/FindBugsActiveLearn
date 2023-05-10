@@ -12,8 +12,8 @@ class AlarmEntity(
 									aMethod: String, // method
 									sLine: String, // start line
 									eLine: String, // end line
-								  msLine: String,
-									meLine: String,
+								  msLine: String, // method start line
+									meLine: String, // method end line
 								  erank : String, // rank
 									commit: AlarmsInCommit // where this belongs to
 									) extends LazyLogging								
