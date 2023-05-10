@@ -118,7 +118,7 @@ class CsvBugReporter(outputPath: String) extends TextUIBugReporter {
     }
 
     val pMethodLine = aMethodLine match {
-      case null -> (-1, -1)
+      case null => (-1, -1)
       case _ => (aMethodLine.getStartLine, aMethodLine.getEndLine)
     }
 
