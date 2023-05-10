@@ -39,7 +39,7 @@ class AlarmEntity(
 	val baseCommit = commit
   val rank = erank.toInt
 	val methodStartLine = msLine.toInt
-	val methodEndLine = meline.toInt
+	val methodEndLine = meLine.toInt
 	// End of basic constructor
 	///////////////////////////////////////
 	
