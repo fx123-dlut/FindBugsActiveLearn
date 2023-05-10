@@ -72,7 +72,7 @@ object VioDBFacade {
 
 
   def addNewOriginViolation(id: String, project: String, commit: String, vtype: String, category: String,
-                            sLine: Int, eLine: Int rank: Int, priority: Int, field: String, method: String, msLine: Int, meLine: Int
+                            sLine: Int, eLine: Int, rank: Int, priority: Int, field: String, method: String, msLine: Int, meLine: Int
                            ) = {
     val result = session.run(
       """MERGE (a:Violation {id: {id}})
