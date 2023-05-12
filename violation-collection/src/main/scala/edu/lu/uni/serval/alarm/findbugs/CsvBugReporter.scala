@@ -97,7 +97,7 @@ class CsvBugReporter(outputPath: String) extends TextUIBugReporter {
     val aSourceLine = bugInstance.getPrimarySourceLineAnnotation
     val aRank = bugInstance.getBugRank
     val aMethodLine = bugInstance.getPrimaryMethod.getSourceLines
-    val aDescribe = getMessage()
+    val aDescribe = bugInstance.getMessage
 
     val sClass = aClass match {
       case null => "NO_CLASS"
