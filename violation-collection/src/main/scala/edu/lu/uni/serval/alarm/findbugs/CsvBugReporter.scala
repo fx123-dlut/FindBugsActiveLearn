@@ -97,6 +97,7 @@ class CsvBugReporter(outputPath: String) extends TextUIBugReporter {
     val aSourceLine = bugInstance.getPrimarySourceLineAnnotation
     val aRank = bugInstance.getBugRank
     val aMethodLine = bugInstance.getPrimaryMethod.getSourceLines
+    val aDescribe = getMessage()
 
     val sClass = aClass match {
       case null => "NO_CLASS"
@@ -129,7 +130,7 @@ class CsvBugReporter(outputPath: String) extends TextUIBugReporter {
     		)*/
 
     val bugRow = List(prioirty, categoryAbbrev, bugAbbv, sClass, sField, sMethod,
-      pSourceLine._1, pSourceLine._2, pMethodLine._1, pMethodLine._2, aRank)
+      pSourceLine._1, pSourceLine._2, pMethodLine._1, pMethodLine._2, aRank, aDescribe)
     alarmList += bugRow
   }
 }

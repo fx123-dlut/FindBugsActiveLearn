@@ -72,8 +72,8 @@ object VioDBFacade {
 
 
   def addNewOriginViolation(id: String, project: String, commit: String, vtype: String, category: String,
-                            sLine: Int, eLine: Int, rank: Int, priority: Int, field: String, method: String, msLine: Int, meLine: Int
-                           ) = {
+                            sLine: Int, eLine: Int, rank: Int, priority: Int, field: String, method: String, msLine: Int
+                            , meLine: Int,desc : String) = {
     val result = session.run(
       """MERGE (a:Violation {id: {id}})
 					 ON CREATE SET a.oid = {id},
@@ -89,7 +89,8 @@ object VioDBFacade {
                          a.field = {field},
                          a.method = {method},
                          a.meLine = {meLine},
-                         a.msLine = {msLine}
+                         a.msLine = {msLine},
+                         a.desc = {desc}
  						RETURN a""",
       value(
         Map("id" -> id,
@@ -105,7 +106,8 @@ object VioDBFacade {
           "field" -> field,
           "method" -> method,
           "msLine" -> msLine,
-          "meLine" -> meLine
+          "meLine" -> meLine,
+          "desc" -> desc
         ).asJava
       )
     )
@@ -125,7 +127,7 @@ object VioDBFacade {
   }
 
   def connect2Parent(pid: String, id: String, commit: String, matched: String, sLine: Int, eLine: Int,
-                     rank: Int, priority: Int, field: String, method: String, msLine: Int, meLine: Int) = {
+                     rank: Int, priority: Int, field: String, method: String, msLine: Int, meLine: Int, desc: String) = {
     val result = session.run(
       """MATCH (p:Violation { id: {pid} } )
 															MERGE (c:Violation { id: {id} } )
@@ -144,7 +146,8 @@ object VioDBFacade {
                                      c.field = {field},
                                      c.method = {method},
                                      c.msLine = {msLine},
-                                     c.meLine = {meLine}
+                                     c.meLine = {meLine},
+                                     c.desc = {desc}
 										MERGE (p)-[:CHILD]->(c)
   									MERGE (c)-[:PARENT]->(p)
 										RETURN p, c
@@ -162,7 +165,8 @@ object VioDBFacade {
           "field" -> field,
           "method" -> method,
           "msLine" -> msLine,
-          "meLine" -> meLine
+          "meLine" -> meLine,
+          "desc" -> desc
         ).asJava
       )
     )

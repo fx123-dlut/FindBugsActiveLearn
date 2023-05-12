@@ -15,6 +15,7 @@ class AlarmEntity(
 								  msLine: String, // method start line
 									meLine: String, // method end line
 								  erank : String, // rank
+								  desc : String, //desc
 									commit: AlarmsInCommit // where this belongs to
 									) extends LazyLogging								
 {
@@ -40,6 +41,7 @@ class AlarmEntity(
   val rank = erank.toInt
 	val methodStartLine = msLine.toInt
 	val methodEndLine = meLine.toInt
+	val descripte = desc
 	// End of basic constructor
 	///////////////////////////////////////
 	
