@@ -124,9 +124,9 @@ object UnfixedAlarmCollector {
               val field = node.get("field").asString()
               val method = node.get("method").asString()
               val resolution = if (node.get("resolution").isNull()) "" else node.get("resolution").asString()
-              val msLine = alarmNode.get("msLine").asInt()
-              val meLine = alarmNode.get("meLine").asInt()
-              val desc = alarmNode.get("desc").asString()
+              val msLine = node.get("msLine").asInt()
+              val meLine = node.get("meLine").asInt()
+              val desc = node.get("desc").asString()
               val emptyCeil = ""
 
               FileUtils.write(outFile, s"$category,$vtype,$priority,$rank,$project,$oid,$commitHash,$path,$sLine," +
